@@ -1,2 +1,2 @@
-# florence-navigator
+# Florence Navigator
 Florence Navigator is a GPS-guided tour app for Florence, South Carolina based on OpenTourBuilder.
