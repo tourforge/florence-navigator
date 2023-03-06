@@ -381,12 +381,12 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "804f09d1b4682d891dc05b57a80b65b0b9c63970"
+      resolved-ref: bf3827b3d64de84d133471ad209503fbe0a0eee2
       url: "https://github.com/opentourbuilder/guide.git"
     source: git
     version: "1.0.0+1"
   path:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path
       sha256: db9d4f58c908a4ba5953fcee2ae317c94889433e5024c27ce74a37f94267945b
@@ -394,7 +394,7 @@ packages:
     source: hosted
     version: "1.8.2"
   path_provider:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path_provider
       sha256: "04890b994ee89bfa80bf3080bfec40d5a92c5c7a785ebb02c13084a099d2b6f9"

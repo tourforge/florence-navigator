@@ -1,9 +1,11 @@
+import 'dart:io';
+
+import 'package:florence_navigator/home.dart';
+import 'package:florence_navigator/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:opentourguide/opentourguide.dart';
 import 'package:opentourguide/theme.dart';
-
-import 'home.dart';
 
 Future<void> main() async {
   await otbGuideInit(const OtbGuideAppConfig(
@@ -12,11 +14,15 @@ Future<void> main() async {
         '''Florence Navigator is a GPS-based tour guide app for Florence, South Carolina built using OpenTourBuilder.''',
     baseUrl: "https://fsrv.fly.dev/v2",
   ));
-  runApp(const FloNavApp());
+
+  var onboarded = await isOnboarded();
+  runApp(FloNavApp(onboarded: onboarded));
 }
 
 class FloNavApp extends StatelessWidget {
-  const FloNavApp({Key? key}) : super(key: key);
+  const FloNavApp({super.key, required this.onboarded});
+
+  final bool onboarded;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,7 @@ class FloNavApp extends StatelessWidget {
           return const SizedBox();
         }
       },
-      home: const Home(),
+      home: onboarded ? const Home() : const Onboarding(),
     );
   }
 }
