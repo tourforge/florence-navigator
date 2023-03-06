@@ -49,32 +49,39 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      body: FutureBuilder<TourIndex>(
-        future: tourIndex,
-        builder: (context, snapshot) {
-          var tours = snapshot.data?.tours;
+      body: ListView(
+        padding: const EdgeInsets.all(12.0),
+        children: [
+          Expanded(
+            child: FutureBuilder<TourIndex>(
+              future: tourIndex,
+              builder: (context, snapshot) {
+                var tours = snapshot.data?.tours;
 
-          if (tours != null) {
-            return ListView.builder(
-              padding: const EdgeInsets.all(8),
-              itemCount: tours.length,
-              itemBuilder: (BuildContext context, int index) =>
-                  _TourListItem(tours[index]),
-            );
-          } else {
-            return Container(
-              padding: const EdgeInsets.all(32.0),
-              alignment: Alignment.topCenter,
-              child: SizedBox(
-                width: 64,
-                height: 64,
-                child: CircularProgressIndicator(
-                  color: Theme.of(context).colorScheme.onBackground,
-                ),
-              ),
-            );
-          }
-        },
+                if (tours != null) {
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: tours.length,
+                    itemBuilder: (BuildContext context, int index) =>
+                        _TourListItem(tours[index]),
+                  );
+                } else {
+                  return Container(
+                    padding: const EdgeInsets.all(32.0),
+                    alignment: Alignment.topCenter,
+                    child: SizedBox(
+                      width: 64,
+                      height: 64,
+                      child: CircularProgressIndicator(
+                        color: Theme.of(context).colorScheme.onBackground,
+                      ),
+                    ),
+                  );
+                }
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -93,30 +100,28 @@ class _TourListItemState extends State<_TourListItem> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      type: MaterialType.card,
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      elevation: 3,
-      shadowColor: Colors.transparent,
-      child: InkWell(
-        onTap: () async {
-          final tourModel = await widget.tour.loadDetails();
-          if (!mounted) return;
+        type: MaterialType.card,
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        elevation: 3,
+        shadowColor: Colors.transparent,
+        child: InkWell(
+          onTap: () async {
+            final tourModel = await widget.tour.loadDetails();
+            if (!mounted) return;
 
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => TourDetails(tourModel)));
-        },
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
-        child: SizedBox(
-          height: 130,
-          child: Row(
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => TourDetails(tourModel)));
+          },
+          borderRadius: const BorderRadius.all(Radius.circular(16)),
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                width: 130,
+                height: 200,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
                   ),
                   child: widget.tour.thumbnail != null
                       ? AssetImageBuilder(
@@ -131,42 +136,80 @@ class _TourListItemState extends State<_TourListItem> {
                       : const SizedBox(),
                 ),
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20, bottom: 20),
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 50,
-                        child: Center(
-                          child: Text(
-                            widget.tour.name,
-                            style: Theme.of(context).textTheme.titleSmall,
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ),
-                      const Expanded(child: SizedBox()),
-                      Text(
-                        "about 25 minute${25 == 1 ? "" : "s"} long",
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyMedium!
-                            .copyWith(color: Colors.grey),
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                  top: 16.0,
+                  bottom: 8.0,
+                ),
+                child: Expanded(
+                  child: Text(
+                    "Florence Historical Attractions Tour Long Title",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 18),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  right: 16.0,
+                  bottom: 16.0,
+                ),
+                child: Wrap(
+                  spacing: 4.0,
+                  runSpacing: 8.0,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.download,
+                      size: 20,
+                      color: Colors.grey.shade300,
+                    ),
+                    Text(
+                      "Download",
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: Colors.grey.shade300),
+                    ),
+                    const SizedBox(width: 4.0),
+                    Icon(
+                      Icons.directions_car,
+                      size: 20,
+                      color: Colors.grey.shade300,
+                    ),
+                    Text(
+                      "Driving Tour",
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: Colors.grey.shade300),
+                    ),
+                    const SizedBox(width: 4.0),
+                    Icon(
+                      Icons.route,
+                      size: 20,
+                      color: Colors.grey.shade300,
+                    ),
+                    Text(
+                      "19 Stops",
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium!
+                          .copyWith(color: Colors.grey.shade300),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
 
