@@ -52,6 +52,29 @@ class _HomeState extends State<Home> {
       body: ListView(
         padding: const EdgeInsets.all(12.0),
         children: [
+          Material(
+            type: MaterialType.card,
+            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Tours",
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  const SizedBox(height: 4.0),
+                  Text(
+                    "Below, you will find a list containing the tours currently available "
+                    "in Florence Navigator. Try tapping on one to take a look!",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
           Expanded(
             child: FutureBuilder<TourIndex>(
               future: tourIndex,
@@ -61,6 +84,7 @@ class _HomeState extends State<Home> {
                 if (tours != null) {
                   return ListView.builder(
                     shrinkWrap: true,
+                    physics: const ScrollPhysics(),
                     itemCount: tours.length,
                     itemBuilder: (BuildContext context, int index) =>
                         _TourListItem(tours[index]),
@@ -145,7 +169,7 @@ class _TourListItemState extends State<_TourListItem> {
                 ),
                 child: Expanded(
                   child: Text(
-                    "Florence Historical Attractions Tour Long Title",
+                    "Florence Historical Attractions Tour",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!

@@ -131,10 +131,10 @@ class _Welcome extends StatelessWidget {
               onPressed: next,
               child: Text(
                 "Let's go",
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(fontSize: 16),
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
               ),
             ),
           ),
@@ -210,10 +210,10 @@ class _GpsPermission extends StatelessWidget {
               ),
               child: Text(
                 "Enable GPS",
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(fontSize: 16),
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.onSecondary,
+                    ),
               ),
             ),
           ),
@@ -284,10 +284,10 @@ class _Ready extends StatelessWidget {
               onPressed: next,
               child: Text(
                 "View tours",
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge!
-                    .copyWith(fontSize: 16),
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.onPrimary,
+                    ),
               ),
             ),
           ),
