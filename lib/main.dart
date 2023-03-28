@@ -32,6 +32,7 @@ class FloNavApp extends StatelessWidget {
               Brightness.dark
           ? darkThemeData
           : lightThemeData,
+      debugShowCheckedModeBanner: false,
       builder: (context, child) {
         if (child != null) {
           return ScrollConfiguration(

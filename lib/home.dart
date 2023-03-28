@@ -75,35 +75,33 @@ class _HomeState extends State<Home> {
             ),
           ),
           const SizedBox(height: 16.0),
-          Expanded(
-            child: FutureBuilder<TourIndex>(
-              future: tourIndex,
-              builder: (context, snapshot) {
-                var tours = snapshot.data?.tours;
+          FutureBuilder<TourIndex>(
+            future: tourIndex,
+            builder: (context, snapshot) {
+              var tours = snapshot.data?.tours;
 
-                if (tours != null) {
-                  return ListView.builder(
-                    shrinkWrap: true,
-                    physics: const ScrollPhysics(),
-                    itemCount: tours.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        _TourListItem(tours[index]),
-                  );
-                } else {
-                  return Container(
-                    padding: const EdgeInsets.all(32.0),
-                    alignment: Alignment.topCenter,
-                    child: SizedBox(
-                      width: 64,
-                      height: 64,
-                      child: CircularProgressIndicator(
-                        color: Theme.of(context).colorScheme.onBackground,
-                      ),
+              if (tours != null) {
+                return ListView.builder(
+                  shrinkWrap: true,
+                  physics: const ScrollPhysics(),
+                  itemCount: tours.length,
+                  itemBuilder: (BuildContext context, int index) =>
+                      _TourListItem(tours[index]),
+                );
+              } else {
+                return Container(
+                  padding: const EdgeInsets.all(32.0),
+                  alignment: Alignment.topCenter,
+                  child: SizedBox(
+                    width: 64,
+                    height: 64,
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).colorScheme.onBackground,
                     ),
-                  );
-                }
-              },
-            ),
+                  ),
+                );
+              }
+            },
           ),
         ],
       ),
@@ -167,16 +165,14 @@ class _TourListItemState extends State<_TourListItem> {
                   top: 16.0,
                   bottom: 8.0,
                 ),
-                child: Expanded(
-                  child: Text(
-                    "Florence Historical Attractions Tour",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 18),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+                child: Text(
+                  "Francis Marion University Sample Tour",
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: 18),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               Padding(
@@ -222,7 +218,7 @@ class _TourListItemState extends State<_TourListItem> {
                       color: Colors.grey.shade300,
                     ),
                     Text(
-                      "19 Stops",
+                      "3 Stops",
                       style: Theme.of(context)
                           .textTheme
                           .labelMedium!
