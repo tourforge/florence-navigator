@@ -166,7 +166,7 @@ class _TourListItemState extends State<_TourListItem> {
                   bottom: 8.0,
                 ),
                 child: Text(
-                  "Francis Marion University Sample Tour",
+                  widget.tour.name,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
@@ -218,7 +218,7 @@ class _TourListItemState extends State<_TourListItem> {
                       color: Colors.grey.shade300,
                     ),
                     Text(
-                      "3 Stops",
+                      "18 Stops",
                       style: Theme.of(context)
                           .textTheme
                           .labelMedium!

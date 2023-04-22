@@ -102,7 +102,7 @@ class _Welcome extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(24.0)),
                   child: Image.asset(
-                    "assets/scmap.jpg",
+                    "assets/florenceconv.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -255,7 +255,7 @@ class _Ready extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(24.0)),
                   child: Image.asset(
-                    "assets/florenceconv.jpg",
+                    "assets/scmap.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
