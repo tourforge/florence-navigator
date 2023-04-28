@@ -186,43 +186,37 @@ class _TourListItemState extends State<_TourListItem> {
                   runSpacing: 8.0,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.download,
                       size: 20,
-                      color: Colors.grey.shade300,
+                      color: Color.fromARGB(255, 160, 160, 160),
                     ),
                     Text(
                       "Download",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium!
-                          .copyWith(color: Colors.grey.shade300),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: const Color.fromARGB(255, 160, 160, 160)),
                     ),
                     const SizedBox(width: 4.0),
-                    Icon(
+                    const Icon(
                       Icons.directions_car,
                       size: 20,
-                      color: Colors.grey.shade300,
+                      color: Color.fromARGB(255, 160, 160, 160),
                     ),
                     Text(
                       "Driving Tour",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium!
-                          .copyWith(color: Colors.grey.shade300),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: const Color.fromARGB(255, 160, 160, 160)),
                     ),
                     const SizedBox(width: 4.0),
-                    Icon(
+                    const Icon(
                       Icons.route,
                       size: 20,
-                      color: Colors.grey.shade300,
+                      color: Color.fromARGB(255, 160, 160, 160),
                     ),
                     Text(
                       "18 Stops",
-                      style: Theme.of(context)
-                          .textTheme
-                          .labelMedium!
-                          .copyWith(color: Colors.grey.shade300),
+                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                          color: const Color.fromARGB(255, 160, 160, 160)),
                     ),
                   ],
                 ),

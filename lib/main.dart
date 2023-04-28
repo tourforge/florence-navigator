@@ -2,17 +2,19 @@ import 'dart:io';
 
 import 'package:florence_navigator/home.dart';
 import 'package:florence_navigator/onboarding.dart';
+import 'package:florence_navigator/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:opentourguide/opentourguide.dart';
-import 'package:opentourguide/theme.dart';
 
 Future<void> main() async {
-  await otbGuideInit(const OtbGuideAppConfig(
+  await otbGuideInit(OtbGuideAppConfig(
     appName: "Florence Navigator",
     appDesc:
         '''Florence Navigator is a GPS-based tour guide app for Florence, South Carolina built using OpenTourBuilder.''',
     baseUrl: "https://fsrv.fly.dev/v2",
+    lightThemeData: lightThemeData,
+    darkThemeData: darkThemeData,
   ));
 
   var onboarded = await isOnboarded();
