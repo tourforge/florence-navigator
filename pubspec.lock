@@ -268,10 +268,10 @@ packages:
     dependency: transitive
     description:
       name: google_fonts
-      sha256: "927573f2e8a8d65c17931e21918ad0ab0666b1b636537de7c4932bdb487b190f"
+      sha256: "6b6f10f0ce3c42f6552d1c70d2c28d764cf22bb487f50f66cca31dcd5194f4d6"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.3"
+    version: "4.0.4"
   http:
     dependency: transitive
     description:
@@ -421,7 +421,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "305b556e402d27369cb401f1353834d08aa6a53b"
+      resolved-ref: "01fc1bf66138602a66e776f301192f72ce1b0a26"
       url: "https://github.com/opentourbuilder/guide.git"
     source: git
     version: "1.0.0+1"
@@ -445,10 +445,10 @@ packages:
     dependency: transitive
     description:
       name: path_provider_android
-      sha256: da97262be945a72270513700a92b39dd2f4a54dad55d061687e2e37a6390366a
+      sha256: "3e58242edc02624f2c712e3f8bea88e0e341c4ae1abd3a6ff661318a3aefd829"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.25"
+    version: "2.0.26"
   path_provider_foundation:
     dependency: transitive
     description:
@@ -477,10 +477,10 @@ packages:
     dependency: transitive
     description:
       name: path_provider_windows
-      sha256: f53720498d5a543f9607db4b0e997c4b5438884de25b0f73098cc2671a51b130
+      sha256: d3f80b32e83ec208ac95253e0cd4d298e104fbc63cb29c5c69edaed43b0c69d6
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.5"
+    version: "2.1.6"
   pedantic:
     dependency: transitive
     description:
@@ -698,10 +698,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_android
-      sha256: a52628068d282d01a07cd86e6ba99e497aa45ce8c91159015b2416907d78e411
+      sha256: "40612cd31902fe46b5158693faa65781b1ca7adfb883d77fa6f0d6dcf0317d85"
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.27"
+    version: "6.0.30"
   url_launcher_ios:
     dependency: transitive
     description:
@@ -714,10 +714,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_linux
-      sha256: "206fb8334a700ef7754d6a9ed119e7349bc830448098f21a69bf1b4ed038cabc"
+      sha256: "207f4ddda99b95b4d4868320a352d374b0b7e05eefad95a4a26f57da413443f5"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.4"
+    version: "3.0.5"
   url_launcher_macos:
     dependency: transitive
     description:
@@ -746,10 +746,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_windows
-      sha256: a83ba3607a507758669cfafb03f9de09bf6e6280c14d9b9cb18f013e406dcacd
+      sha256: "254708f17f7c20a9c8c471f67d86d76d4a3f9c1591aad1e15292008aceb82771"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.6"
   uuid:
     dependency: transitive
     description:
