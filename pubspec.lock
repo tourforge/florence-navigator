@@ -421,7 +421,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "7359e3d1494836650e93b75ac376450f44715d5b"
+      resolved-ref: "25eb2a494725cdd1848405bbcd343db49668be1b"
       url: "https://github.com/opentourbuilder/guide.git"
     source: git
     version: "1.0.0+1"
