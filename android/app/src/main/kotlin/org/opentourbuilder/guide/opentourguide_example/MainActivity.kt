@@ -1,4 +1,4 @@
-package com.florencenavigator.guide
+package com.visitflo.flonav
 
 import com.ryanheise.audioservice.AudioServiceActivity
 
