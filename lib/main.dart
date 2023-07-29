@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:florence_navigator/home.dart';
 import 'package:florence_navigator/onboarding.dart';
 import 'package:florence_navigator/theme.dart';
@@ -8,6 +6,8 @@ import 'package:flutter/scheduler.dart';
 import 'package:opentourguide/opentourguide.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   await otbGuideInit(OtbGuideAppConfig(
     appName: "Florence Navigator",
     appDesc:
