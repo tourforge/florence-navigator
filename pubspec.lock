@@ -722,7 +722,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: ca6c3c5d02822ca7b5cdff3ed22dc3ca5f262169
+      resolved-ref: "485f1cd8f67c0d500e4bfa03a22fc230b0a4acc7"
       url: "https://github.com/tourforge/guide.git"
     source: git
     version: "1.0.0+1"
