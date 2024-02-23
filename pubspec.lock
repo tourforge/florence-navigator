@@ -432,15 +432,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  opentourguide:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: bafc3ca133e1201666451d89b19aecbaf02ff508
-      url: "https://github.com/opentourbuilder/guide.git"
-    source: git
-    version: "1.0.0+1"
   path:
     dependency: "direct main"
     description:
@@ -654,6 +645,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.5.1"
+  tourforge:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: be25385451f3ea922a8517af7457c6a26b22840c
+      url: "https://github.com/tourforge/guide.git"
+    source: git
+    version: "1.0.0+1"
   typed_data:
     dependency: transitive
     description:

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:opentourguide/opentourguide.dart';
+import 'package:tourforge/tourforge.dart';
 
 import 'onboarding.dart';
 import 'theme.dart';
@@ -7,11 +7,11 @@ import 'theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runOpenTourGuide(
-    config: OpenTourGuideConfig(
+  runTourForge(
+    config: TourForgeConfig(
       appName: "Florence Navigator",
       appDesc:
-          '''Florence Navigator is a GPS-based tour guide app for Florence, South Carolina built using OpenTourBuilder.''',
+          '''Florence Navigator is a GPS-based tour guide app for Florence, South Carolina built using TourForge.''',
       baseUrl: "https://fsrv.fly.dev/v2",
       lightThemeData: lightThemeData,
       darkThemeData: darkThemeData,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:opentourguide/opentourguide.dart';
+import 'package:tourforge/tourforge.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key, required this.finish});

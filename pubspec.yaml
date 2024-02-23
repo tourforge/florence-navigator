@@ -18,8 +18,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  opentourguide:
-    git: https://github.com/opentourbuilder/guide.git
+  tourforge:
+    git: https://github.com/tourforge/guide.git
   path_provider: ^2.0.13
   path: ^1.8.2
   url_launcher: ^6.1.12
