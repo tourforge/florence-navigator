@@ -12,7 +12,8 @@ Future<void> main() async {
       appName: "Florence Navigator",
       appDesc:
           '''Florence Navigator is a GPS-based tour guide app for Florence, South Carolina built using TourForge.''',
-      baseUrl: "https://fmu-tourforge-data.s3.us-east-1.amazonaws.com/FlorenceNavigator",
+      baseUrl: "https://tourforge.github.io/config/florence-navigator",
+      baseUrlIsIndirect: true,
       lightThemeData: lightThemeData,
       darkThemeData: darkThemeData,
     ),

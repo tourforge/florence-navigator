@@ -722,7 +722,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: c9a204a8c8ab2f68ade2a0d2ab5927a0ac6e3b66
+      resolved-ref: "75332f262c2517b9196021610d72c58284981b8e"
       url: "https://github.com/tourforge/baseline.git"
     source: git
     version: "1.0.0+1"
