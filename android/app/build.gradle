@@ -4,6 +4,7 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -29,8 +30,20 @@ if (flutterVersionName == null) {
 }
 
 android {
-    compileSdkVersion 34
-    ndkVersion "25.1.8937393"
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.visitflo.flonav"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+        minSdkVersion flutter.minSdkVersion
+        compileSdkVersion 36
+        targetSdkVersion flutter.targetSdkVersion
+        
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    ndkVersion "29.0.14206865"
     namespace "com.visitflo.flonav"
 
     compileOptions {
@@ -44,17 +57,6 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
-    }
-
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.visitflo.flonav"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-        minSdkVersion 21
-        targetSdkVersion flutter.targetSdkVersion
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
     }
 
     signingConfigs {
@@ -77,6 +79,7 @@ flutter {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.multidex:multidex:2.0.1"
+    //implementation 'com.mapbox.maps:android-ndk27:11.17.1'
 }

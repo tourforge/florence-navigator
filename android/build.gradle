@@ -1,16 +1,3 @@
-buildscript {
-    ext.kotlin_version = '1.9.22'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
 allprojects {
     repositories {
         google()
@@ -18,11 +5,51 @@ allprojects {
     }
 }
 
+allprojects {
+    configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            // Check if the dependency is from Mapbox
+            if (details.requested.group == 'com.mapbox.maps') {
+                // Force the use of the -ndk27 variant for 16KB alignment
+                // Example: upgrading from 'android' to 'android-ndk27'
+                if (details.requested.name == 'android') {
+                    details.useTarget("com.mapbox.maps:android-ndk27:11.7.0")
+                }
+            }
+            
+            // MapLibre users (if you migrated from Mapbox)
+            //if (details.requested.group == 'org.maplibre.gl') {
+            //    details.useVersion "7.1.0" // Ensure this version is 16kb ready
+            //}
+        }
+    }
+}
+
+
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
+    afterEvaluate { project ->
+        // Check if this subproject is an Android library or application
+        if (project.hasProperty('android')) {
+            project.android {
+                // Force every library to compile against SDK 34
+                compileSdkVersion 36
+                
+                // Optional: Force a specific build tools version if needed
+                buildToolsVersion "36.0.0"
+                
+                // Use this to fix common "namespace" or "minSdk" conflicts
+                defaultConfig {
+                    if (minSdkVersion.apiLevel < 21) {
+                        minSdkVersion 21
+                    }
+                }
+            }
+        }
+    }
     project.evaluationDependsOn(':app')
 }
 
