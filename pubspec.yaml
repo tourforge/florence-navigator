@@ -1,6 +1,6 @@
 name: florence_navigator
 description: The Florence Navigator tour guide app.
-version: 1.0.5+10
+version: 1.0.5+12
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -20,9 +20,7 @@ dependencies:
     sdk: flutter
 
   tourforge_baseline:
-    # git: https://github.com/tourforge/baseline.git
-    path: /home/roland/code-project/personal/baseline
-
+    git: https://github.com/tourforge/baseline.git
   path_provider: ^2.0.13
   path: ^1.8.2
   url_launcher: ^6.1.12

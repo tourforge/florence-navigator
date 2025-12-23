@@ -29,6 +29,7 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+//android.buildTypes.release.ndk.debugSymbolLevel = FULL
 android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
@@ -70,6 +71,9 @@ android {
     buildTypes {
         release {
             signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
         }
     }
 }
