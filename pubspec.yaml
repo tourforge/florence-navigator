@@ -20,7 +20,8 @@ dependencies:
     sdk: flutter
 
   tourforge_baseline:
-    git: https://github.com/tourforge/baseline.git
+    # git: https://github.com/tourforge/baseline.git
+    path: /Users/roland/code-project/personal/baseline
   path_provider: ^2.0.13
   path: ^1.8.2
   url_launcher: ^6.1.12

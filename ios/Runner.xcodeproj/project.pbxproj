@@ -14,8 +14,6 @@
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		D7D94B5F2A17D0180044DF4E /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B395520C601DB222791D048 /* Pods_Runner.framework */; };
-		D7EAA5552A17ED8000B8D4E3 /* Mapbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7EAA5542A17ED8000B8D4E3 /* Mapbox.framework */; };
-		D7EAA5562A17ED8000B8D4E3 /* Mapbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7EAA5542A17ED8000B8D4E3 /* Mapbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +23,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7EAA5562A17ED8000B8D4E3 /* Mapbox.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +48,6 @@
 		B39AD96BF449ABE01D90B8AB /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		D102FDEC2A52490F00D16491 /* Runner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Runner.entitlements; sourceTree = "<group>"; };
 		D14FF961C66CA4A9D45FD05D /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		D7EAA5542A17ED8000B8D4E3 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Mapbox.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +56,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7D94B5F2A17D0180044DF4E /* Pods_Runner.framework in Frameworks */,
-				D7EAA5552A17ED8000B8D4E3 /* Mapbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +75,6 @@
 		4C1DEEAED488672AD8E5DF66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7EAA5542A17ED8000B8D4E3 /* Mapbox.framework */,
 				0B395520C601DB222791D048 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;

@@ -17,7 +17,7 @@
     ndk.enable = true;
     ndk.version = [ "29.0.14206865" ];
 
-    android-studio.enable = true;
+    # android-studio.enable = true;
     emulator.enable = true;
   };
 
@@ -27,7 +27,7 @@
 
   packages = with pkgs; [
     bundletool
-    gemini-cli-bin
+    android-studio-tools
   ];
 
   tasks."android-build:build-apk" = {

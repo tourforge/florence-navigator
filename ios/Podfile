@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '11.0'
+platform :ios, '13.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -40,15 +40,6 @@ post_install do |installer|
 
     target.build_configurations.each do |config|
       config.build_settings["ONLY_ACTIVE_ARCH"] = "YES"
-    end
-
-    if target.name == "tourforge_baseline"
-      target.build_configurations.each do |config|
-        config.build_settings['FRAMEWORK_SEARCH_PATHS'] ||= ['$(inherited)']
-        config.build_settings['FRAMEWORK_SEARCH_PATHS'] << ' ${SRCROOT}/..' # should be (project dir)/example/ios
-        config.build_settings['OTHER_LDFLAGS'] ||= ['$(inherited)']
-        config.build_settings['OTHER_LDFLAGS'] << ' -framework Mapbox'
-      end
     end
   end
 end
