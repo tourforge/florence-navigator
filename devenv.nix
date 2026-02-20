@@ -2,6 +2,12 @@
 
 {
   languages.kotlin.enable = true;
+  languages.nix.enable = true;
+  languages.swift.enable = true;
+  languages.dart.enable = true;
+  languages.java = {
+    jdk.package = lib.mkForce pkgs.jdk17;
+  };
 
   android = {
     enable = true;
@@ -12,20 +18,22 @@
       "35.0.0-rc3"
       "35.0.0"
     ];
-    platforms.version = [ "33" "34" "35" "36" ];
+
+    platforms.version = [
+      "35"
+      "36"
+    ];
     
     ndk.enable = true;
     ndk.version = [ "29.0.14206865" ];
 
-    # android-studio.enable = true;
     emulator.enable = true;
   };
 
-  languages.java = {
-    jdk.package = lib.mkForce pkgs.jdk17;
-  };
-
   packages = with pkgs; [
+    git
+    ripgrep
+    
     bundletool
     android-studio-tools
   ];
