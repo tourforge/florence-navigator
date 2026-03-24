@@ -7,6 +7,11 @@ lib.mkIf (config.stdenv.buildPlatform.isDarwin) {
     xcodes
   ];
 
+  # No support for x86 on arm darwins for now, reduces build time and space
+  android.abis = [
+    "arm64-v8a"
+  ];
+
   # Slight harm to reproducibility, TOO BAD!
   apple.sdk = null;
   env.DEVELOPER_DIR = "";

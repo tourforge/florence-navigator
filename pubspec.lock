@@ -1008,9 +1008,11 @@ packages:
   tourforge_baseline:
     dependency: "direct main"
     description:
-      path: "/Users/roland/code-project/personal/baseline"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: f53501dfe1e2d3b31df7859e7139dce4b5d84499
+      url: "https://github.com/tourforge/baseline.git"
+    source: git
     version: "1.0.0+1"
   typed_data:
     dependency: transitive

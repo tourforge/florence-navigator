@@ -19,6 +19,18 @@
       "35.0.0"
     ];
 
+    # All the licenses so flutter doctor can shut up
+    extraLicenses = [
+      "android-sdk-preview-license"
+      "android-googletv-license"
+      "android-sdk-arm-dbt-license"
+      "google-gdk-license"
+      "intel-android-extra-license"
+      "intel-android-sysimage-license"
+      "mips-android-sysimage-license"
+      "android-googlexr-license"
+    ];
+
     platforms.version = [
       "35"
       "36"
