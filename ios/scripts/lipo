@@ -1,0 +1,21 @@
+#!/bin/bash
+# Precision shim for lipo to handle read-only frameworks from Nix store.
+# See: https://github.com/NixOS/nixpkgs/issues/405066
+
+# If the upstream issue is fixed and the file is already writable, 
+# this script will still work gracefully.
+
+for arg in "$@"; do
+    # Check if we are acting on the Flutter binary within a framework
+    if [[ "$arg" == *"Flutter.framework/Flutter" ]]; then
+        # Identify the framework directory
+        FW_DIR=$(echo "$arg" | sed 's|/Flutter$||')
+        if [ -d "$FW_DIR" ]; then
+             # Make the framework and its contents writable
+             chmod -R +w "$FW_DIR" 2>/dev/null
+        fi
+    fi
+done
+
+# Pass through to the real lipo tool
+exec /usr/bin/lipo "$@"
